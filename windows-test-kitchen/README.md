@@ -2,12 +2,11 @@ Test Kitchen Windows Tips
 -----------------------
 
 ##### Requirements
-- test-kitchen (I'm using version 1.4)
-- the following gems:
-
+- test-kitchen (1.4)
+- kitchen-vagrant (0.18.0)
+- winrm-transport (1.0.1)
 
 #### Background
-
 
 Having worked at smaller starts ups I've always had the luxury of being able to write cookbooks for a specific platform.  Recently, I needed to author a cookbook that required testing across various platforms.  Thank you [test-kitchen](https://github.com/test-kitchen/test-kitchen)!
 
@@ -15,7 +14,7 @@ For the most part testing under various flavors of unix meant that once you star
 
 ##### Install [vagrant-winrm](https://github.com/criteo/vagrant-winrm)
 
-You won't be able to communicate with your windows box without this installed.
+After installing the gems above, you'll also need to install a vagrant plugin.  After doing so you'll be able to communicate with your windows box.
 
 ```
 vagrant plugin install vagrant-winrm
@@ -75,6 +74,3 @@ On the Windows vm, find your event log under Control Panel -> System and Securit
 From here click on the Window Logs -> Application.  On the right, under Action -> Application, click on Find and search for chef.  You'll find your chef output there.  Happy hunting!
 
 ![alt tag](./attachment_b.png)
-
-
-* gem winrm-transport
